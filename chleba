@@ -56,3 +56,12 @@ function zaplatitVse(){
   alert("vse");
 }
 
+function odejdi(){
+  if(seznam.length > 0){
+    alert("nezaplatitl jsi");
+  }
+  else{
+    alert("vse ok");
+  }
+}
+
