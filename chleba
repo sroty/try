@@ -1,0 +1,58 @@
+var seznam = [];
+
+function spustit(){
+  var cislo = 1;
+  var objednavka;
+  var dalsiObjednavka = true;
+ 
+  objednavka = promtp("Vítejte v objednavacím systému, co to bude");
+  
+    if(objednavka == ""){
+        while(objednavka == ""){
+            objednavka = prompt("co to bude");
+        }
+     }
+     
+    seznam.push(cislovani + " " +objednavka); 
+    cislovani++;
+    
+    while(dalsiObjednavka == true){
+      if(objednavka != null){
+        objednavka = prompt("bude to jeste neco");
+        
+          if(objednavka != ""){
+            seznam.push(cislovani + " " + objednavka);
+            cislovani++;
+          }
+          else{
+            alert("nesmi byt prazdné policko");
+          }
+      }
+      else{
+        dalsiObjednavka = false;
+      }
+    }
+    
+    seznam.pop();
+    document.getElementById("vypsat").innerHtml = seznam.join("<br>");
+}
+
+function zaplatVybrane(){
+  var cislo = documnet.getElementById("cislo").value;
+  
+    if((isNaN(cislo)==true) || (Number(cislo)>seznam.length) || (Number(cislo)<1)){
+      alert("polozka...");
+    }
+    else{
+      alert("zaplatil jsi... "+seznam[Number(cislo)-1];
+      seznam.splice((Number(cislo)-1),1);
+    }
+    document.getElementById("vypsat").innerHtml = seznam.join("<br>");
+}
+
+function zaplatitVse(){
+  seznam = [];
+  document.getElementById("vypsat").innerHtml = seznam.join("<br>");
+  alert("vse");
+}
+
